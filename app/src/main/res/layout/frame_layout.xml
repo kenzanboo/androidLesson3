@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
+
+
+    <View
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:id="@+id/blue"
+        android:layout_alignBottom="@+id/yellow"
+        android:layout_alignParentTop="true"
+        android:background="#00FFFF"/>
+    <View
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:id="@+id/pink"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/blue"
+        android:background="#FF00FF"/>
+    <View
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:id="@+id/yellow"
+        android:background="#FFFF00"
+        android:layout_below="@+id/pink"
+        android:layout_toRightOf="@+id/pink"/>
+
+</RelativeLayout>
+
+<!--
+
+Why is blue 200px tall?
+
+Answers
+
+ROOT
+ └── LinearLayout1
+      └── ImageView1
+      └── LinearLayout2
+           └── TextView1
+           └── TextView2
+What is the name of the parent to LinearLayout2?
+    linearlayout1
+List all the children of LinearLayout1.
+    direct children are imageview1 linearlayout2
+How many levels deep is this view hierarchy?
+    three levels
+What is the benefit of using a RelativeLayout over a LinearLayout?
+    allows it to be more shallow
+What is the difference between match_parent and fill_parent?
+    match parent is like inherit. it takes the entire space as the parent
+    fill is the same, just older syntax
+-->
