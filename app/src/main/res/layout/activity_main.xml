@@ -11,15 +11,15 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:id="@+id/editText"
+        android:id="@+id/searchText"
         android:layout_gravity="center_horizontal"/>
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
-        android:layout_toRightOf="@+id/editText"
-        android:id="@+id/button"/>
+        android:text="@string/search"
+        android:layout_toEndOf="@+id/searchText"
+        android:id="@+id/searchButton"/>
 
 </RelativeLayout>

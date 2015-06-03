@@ -1,41 +1,23 @@
-package com.kenzanboo.layout_example;
+package com.kenzanboo.notes;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
-//import android.webkit.WebView;
-//import android.webkit.WebViewClient;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText searchText = (EditText) findViewById(R.id.searchText);
-        Button searchButton = (Button) findViewById(R.id.searchButton);
-
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast toast = Toast.makeText(getApplicationContext(), searchText.getText().toString(), Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER,0,0);
-                toast.show();
-
-            }
-        });
-
-        //WebView webview = (WebView) findViewById(R.id.web_view);
-        //webview.setWebViewClient(new WebViewClient());
-        //webview.loadUrl("http://www.thinkful.com");
+        Toolbar toolbar = (Toolbar) findViewById(R.id.my_awesome_toolbar);
+        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -54,9 +36,14 @@ public class MainActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    getApplicationContext().getString(R.string.hello_world),
+                    Toast.LENGTH_SHORT);
+            toast.show();
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
